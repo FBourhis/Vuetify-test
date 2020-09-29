@@ -3,16 +3,28 @@
     <h1 class="subtitle-1 grey--text">Dashboard</h1>
 
     <v-container class="my-5">
-
       <v-layout row class="mb-3">
-        <v-btn small flat class="grey--text" @click="sortBy('title')">
-          <v-icon left small>mdi-folder</v-icon>
-          <span class="caption text-lowercase">By project name</span>
-        </v-btn>
-        <v-btn small flat class="grey--text" @click="sortBy('person')">
-          <v-icon left small>mdi-account</v-icon>
-          <span class="caption text-lowercase">By person</span>
-        </v-btn>
+
+         <v-tooltip top>
+          <template v-slot:activator="{ on }">
+            <v-btn small flat class="grey--text" @click="sortBy('title')" v-on="on">
+              <v-icon left small>mdi-folder</v-icon>
+              <span right class="caption text-lowercase">by project name</span>
+            </v-btn>
+          </template>
+          <span>Sorts projects by name</span>
+        </v-tooltip>
+
+        <v-tooltip top>
+          <template v-slot:activator="{ on }">
+            <v-btn small flat class="grey--text" @click="sortBy('person')" v-on="on">
+              <v-icon left small>mdi-account</v-icon>
+              <span class="caption text-lowercase">By person</span>
+            </v-btn>
+          </template>
+          <span>Sort by Person</span>
+        </v-tooltip>
+
       </v-layout>
 
       <v-card flat v-for="project in projects" :key="project.title">
@@ -88,10 +100,10 @@ export default {
     };
   },
   methods: {
-      sortBy(prop) {
-        this.projects.sort((a, b) => a[prop] < b[prop] ? -1 : 1);
-      }
-    }
+    sortBy(prop) {
+      this.projects.sort((a, b) => (a[prop] < b[prop] ? -1 : 1));
+    },
+  },
 };
 </script>
 
