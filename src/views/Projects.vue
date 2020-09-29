@@ -7,7 +7,7 @@
         <v-expansion-panel v-for="project in myProjects" :key="project.title">
           <v-expansion-panel-header>{{ project.title }}</v-expansion-panel-header>
           <v-expansion-panel-content>
-            <v-card flat>
+            <v-card text>
               <v-card-text class="px-4 grey--text">
                 <div class="font-weight-bold">due by {{ project.due }}</div>
                 <div>{{ project.content }}</div>

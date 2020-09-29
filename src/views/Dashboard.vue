@@ -7,7 +7,7 @@
 
          <v-tooltip top>
           <template v-slot:activator="{ on }">
-            <v-btn small flat class="grey--text" @click="sortBy('title')" v-on="on">
+            <v-btn small text class="grey--text" @click="sortBy('title')" v-on="on">
               <v-icon left small>mdi-folder</v-icon>
               <span right class="caption text-lowercase">by project name</span>
             </v-btn>
@@ -17,7 +17,7 @@
 
         <v-tooltip top>
           <template v-slot:activator="{ on }">
-            <v-btn small flat class="grey--text" @click="sortBy('person')" v-on="on">
+            <v-btn small text class="grey--text" @click="sortBy('person')" v-on="on">
               <v-icon left small>mdi-account</v-icon>
               <span class="caption text-lowercase">By person</span>
             </v-btn>
@@ -27,7 +27,7 @@
 
       </v-layout>
 
-      <v-card flat v-for="project in projects" :key="project.title">
+      <v-card text v-for="project in projects" :key="project.title">
         <v-layout row wrap :class="`pa-3 project ${project.status}`">
           <v-flex xs12 md6>
             <div class="caption grey--text">Project title</div>
