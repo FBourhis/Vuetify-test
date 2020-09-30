@@ -71,10 +71,9 @@
 </template>
 
 <script>
-import Popup from './Popup';
+
 
 export default {
-  components: { Popup },
   data() {
     return {
       drawer: false,
